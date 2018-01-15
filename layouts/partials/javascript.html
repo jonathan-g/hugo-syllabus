@@ -1,0 +1,18 @@
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!--   Core JS Files   -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/4.1.6/what-input.min.js" type="text/javascript"></script>
+  <script src="/js/foundation/foundation.min.js" type="text/javascript"></script>
+  <script src="/js/app.js"  type="text/javascript"></script>
+
+   <!-- LaTeX math rendering -->
+    {{ if or .Params.math .Site.Params.math }}
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    {{ end }}
