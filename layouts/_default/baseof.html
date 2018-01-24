@@ -4,7 +4,9 @@
 {{- $site_subject_name := $.Site.Params.site_subject_name | default $.Site.Params.CourseName -}}
 <html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" itemscope itemtype="http://schema.org/{{ $site_type | safeHTML }}" id="website">
   {{partial "head.html" . }}
+  <body>
   {{ block "body" . }}
+  </body>
 	{{ end }}
   {{partial "javascript.html" . }}
 </html>
