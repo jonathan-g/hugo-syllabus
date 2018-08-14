@@ -4,7 +4,6 @@
 {{- $site_subject_name := $.Site.Params.site_subject_name | default $.Site.Params.CourseName -}}
 <html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" itemscope itemtype="http://schema.org/{{ $site_type | safeHTML }}" id="website">
   {{partial "head.html" . }}
-  <body style="background-image:url({{ .Site.Params.background | relURL }});background-size:{{ .Site.Params.backgroundSize | safeCSS  }};background-repeat:{{ .Site.Params.backgroundRepeat | safeCSS }};background-color:{{ .Site.Params.backgroundColor | safeCSS }};background-blend-mode:{{ .Site.Params.backgroundBlendMode | safeCSS }}">
   {{ block "body" . }}
   </body>
 	{{ end }}
