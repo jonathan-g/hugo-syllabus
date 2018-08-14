@@ -1,3 +1,24 @@
 {{ define "body" }}
-
+<body style="background-image:url(img/course_banner_mirrored.jpg);background-size:cover;background-repeat:repeat-y;">
+  <div class="grid-y medium-grid-frame">
+    {{ partial "topbar.html" . }}
+    <div class="grid-x medium-auto medium-cell-block-container">
+      <div class="grid-container fill-y medium-cell-block-y">
+        <div class="grid-y fill-y grid-margin-y">
+          <div class="cell auto show-for-medium">
+          </div>
+          <div class="grid-x grid-padding-x grid-padding-y shrink scrollable-content medium-cell-block-container">
+            <div class="cell small-12 medium-8 large-5 medium-offset-2" style="color:white;background-color:hsla(0, 0%, 0%, 0.4);overflow:scroll-y">
+              <h1>{{ .Site.Params.FullCourseName }}</h1>
+              <p>{{ .Site>params.CourseCatalogEntry }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell footer shrink" style="text-align:center;color:white;background-color:hsla(0, 0%, 0%, 0.4);">
+      {{ partial "footer.html" . }}
+    </div>
+  </div>
+</body>
 {{ end }}
