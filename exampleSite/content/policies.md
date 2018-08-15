@@ -9,25 +9,25 @@ date: "2017-04-13T00:00:00"
 **I expect you to complete the assigned reading before class on the day
 for which it is assigned.**
 
-**Homework will be due by 11:59 PM on the due date.** You will set up a 
+**Homework will be due by 11:59 PM on the due date.** You will set up a
 Box folder for this course at <https://vanderbilt.box.com>
-and share it with me (put me in the role of Editor), and you will turn in 
-homework by making a subfolder for each homework assignment and uploading 
-{{% NETLOGO %}} `.nlogo` model files or text files.
+and share it with me (put me in the role of Editor), and you will turn in
+homework by making a subfolder for each homework assignment and uploading
+{{% RSTUDIO %}} `.nlogo` model files or text files.
 
 
 ### General instructions for reading assignments
 
-* Do the assigned reading _before_ you come to class on the date for 
-  which it is assigned. If you have questions or find the ideas presented in 
+* Do the assigned reading _before_ you come to class on the date for
+  which it is assigned. If you have questions or find the ideas presented in
   the readings confusing, I encourage you to ask questions in class.
-* Questions in the "Reading Notes" sections of the assignments are for you 
-  to think about to make sure you understand the material, but you do not have 
+* Questions in the "Reading Notes" sections of the assignments are for you
+  to think about to make sure you understand the material, but you do not have
   to write up your answers or turn them in.
 
-    You are responsible for all the assigned readings, but topics I have 
+    You are responsible for all the assigned readings, but topics I have
     highlighted in the reading notes are particularly important.
-* In addition to the questions I ask in the reading notes, look over the 
+* In addition to the questions I ask in the reading notes, look over the
   "Conclusions" section at the end of each chapter
   to check whether you understand the key facts and concepts from the chapter.
 
@@ -37,16 +37,16 @@ homework by making a subfolder for each homework assignment and uploading
 This course, like all courses at Vanderbilt, is conducted under the Honor Code.
 
 **Studying:**
-: As you study for this class, I encourage you to to seek help from me or from 
+: As you study for this class, I encourage you to to seek help from me or from
   other classmates or friends.
-  
+
 **Homework Assignments:**
-: I encourage working together on homework assignments: you may talk with your 
-  friends and classmates about homework assignments, compare notes on how you 
-  are working a problem, and you may look at your classmates' work on homework 
+: I encourage working together on homework assignments: you may talk with your
+  friends and classmates about homework assignments, compare notes on how you
+  are working a problem, and you may look at your classmates' work on homework
   assignments.
-  But you must work through the problems yourself in the work you turn in: 
-  **Even if you have discussed the solution with others you must work through 
+  But you must work through the problems yourself in the work you turn in:
+  **Even if you have discussed the solution with others you must work through
   the steps yourself and express the answers in your own words. You may not
   simply copy someone else's answer.**
 
@@ -55,7 +55,7 @@ This course, like all courses at Vanderbilt, is conducted under the Honor Code.
   These team assignments will contain instructions how the honor code applies.
 
 **Research Project:**
-: The research project assignment will contain details about how the honor code 
+: The research project assignment will contain details about how the honor code
   applies to the research project.
 
 If you ever have questions about how the Honor Code applies to your work
