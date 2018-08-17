@@ -16,16 +16,16 @@
 	            {{ .Content }}
               {{- if (or .PrevInSection .NextInSection) }}
               <div class="grid-x grid-padding-x align-top">
-	              {{- if .NextInSection }}
-                  <div class="cell small-6">
-	                   <span class="text-left"><a href="{{.NextInSection.URL}}"><i class="material-icons">arrow_back</i> Prev: HW #{{.NextInSection.Params.assignment_number}} "{{.NextInSection.Title}}"</a></span>
-                  </div>
-	              {{ end -}}
-	              {{- if .PrevInSection }}
                 <div class="cell small-6">
-	                 <span class="text-right"><a href="{{.PrevInSection.URL}}">Next: HW #{{.PrevInSection.Params.assignment_number}} "{{.PrevInSection.Title}}" <i class="material-icons">arrow_forward</i></a></span>
-                 </div>
-	              {{ end -}}
+                  {{- if .NextInSection }}
+	                  <span class="text-left"><a href="{{.NextInSection.URL}}"><i class="material-icons">arrow_back</i> Prev: HW #{{.NextInSection.Params.assignment_number}} "{{.NextInSection.Title}}"</a></span>
+                  {{ end -}}
+                  </div>
+                <div class="cell small-6">
+                  {{- if .PrevInSection }}
+	                  <span class="text-right"><a href="{{.PrevInSection.URL}}">Next: HW #{{.PrevInSection.Params.assignment_number}} "{{.PrevInSection.Title}}" <i class="material-icons">arrow_forward</i></a></span>
+                  {{ end -}}
+                </div>
 	            </div>
 	            {{ end -}}
             </div>

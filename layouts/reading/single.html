@@ -8,24 +8,26 @@
           <div class="cell auto show-for-medium">
           </div>
           <div class="grid-x grid-padding-x grid-padding-y shrink scrollable-content medium-cell-block-container" style="background-color:hsla(0, 0%, 100%, 0.9);">
-		  	  <h2 class="title text-center">{{ .Title }}</h2>
-		  	  <h3 class="text-center">Class #{{ .Params.class_number }} ({{dateFormat "Mon., Jan 2" .Params.class_date}})</h3>
+            <div class="cell" style="height:calc(100vh - 5rem);">
+    		  	  <h2 class="title text-center">{{ .Title }}</h2>
+    		  	  <h3 class="text-center">Class #{{ .Params.class_number }} ({{dateFormat "Mon., Jan 2" .Params.class_date}})</h3>
 	            {{ .Content }}
 	            {{- if (or .PrevInSection .NextInSection) }}
               <div class="grid-x grid-padding-x align-top">
-	              {{- if .NextInSection }}
                   <div class="cell small-6">
+                    {{- if .NextInSection }}
 	                   <span class="text-left"><a href="{{.NextInSection.URL}}"><i class="material-icons">arrow_back</i> Prev: Class #{{.NextInSection.Params.class_number}} "{{.NextInSection.Title}}"</a></span>
+                     {{ end -}}
                   </div>
-	              {{ end -}}
-	              {{- if .PrevInSection }}
                 <div class="cell small-6">
+                  {{- if .PrevInSection }}
 	                 <span class="text-right"><a href="{{.PrevInSection.URL}}">Next: Class #{{.PrevInSection.Params.class_number}} "{{.PrevInSection.Title}}" <i class="material-icons">arrow_forward</i></a></span>
+                   {{ end -}}
                  </div>
-	              {{ end -}}
 	            </div>
 	            {{ end -}}
             </div>
+          </div>
 	      </div>
       </div>
 		</div>

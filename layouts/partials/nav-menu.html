@@ -1,23 +1,25 @@
 <ul class="dropdown menu vertical medium-horizontal navbar-menu" data-dropdown-menu id="navigation-menu">
-{{ range .Site.Menus.main }}
-  {{ if .HasChildren }}
-  <li class="is-dropdown-submenu-parent">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      {{- .Name -}}
-    </a>
-    <ul class="menu">
-      {{ range .Children }}
-      <li class="navbar-text" {{- with .Identifier }}id="{{ .Identifier }}"{{ end -}} ><a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{end}}>
+{{ range .Site.Menus.main -}}
+  {{- if gt .Weight 0 }}
+    {{ if .HasChildren -}}
+    <li class="is-dropdown-submenu-parent">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        {{- .Name -}}
+      </a>
+      <ul class="menu">
+        {{ range .Children }}
+        <li class="navbar-text" {{- with .Identifier }}id="{{ .Identifier }}"{{ end -}} ><a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{end}}>
+          {{- with .Pre }}{{ . | safeHTML }}{{ end -}}
+          <span>{{ .Name }}</span></a></li>
+        {{end}}
+      </ul>
+    </li>
+
+    {{ else }}
+      <li class="navbar-text"><a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{end}}>
         {{- with .Pre }}{{ . | safeHTML }}{{ end -}}
         <span>{{ .Name }}</span></a></li>
-      {{end}}
-    </ul>
-  </li>
-
-  {{ else }}
-    <li class="navbar-text"><a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{end}}>
-      {{- with .Pre }}{{ . | safeHTML }}{{ end -}}
-      <span>{{ .Name }}</span></a></li>
+    {{ end }}
   {{ end }}
 {{ end }}
 </ul>
