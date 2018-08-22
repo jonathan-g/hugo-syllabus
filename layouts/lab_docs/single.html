@@ -12,6 +12,9 @@
     		  	  <h2 class="title text-center">
 		    	    {{- if isset .Params "lab_number" -}}
 		    	      Reading for Lab #{{ .Params.lab_number }} on {{ .Params.lab_date }}: {{ end -}}
+		    	    {{- if isset .Params "pdf_url" }}
+		    	        <h4><a href="{{ .Params.pdf_url }}" target="_blank">PDF version</a> <a href="{{ .Params.pdf_url }}" target="_blank"><i class="fa fa-pdf"></i></a></h4>
+		    	    {{ end -}}
     	        {{ .Title }}</h2>
               {{ .Content }}
             </div>
