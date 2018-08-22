@@ -8,15 +8,16 @@
           <div class="cell auto show-for-medium">
           </div>
           <div class="grid-x grid-padding-x grid-padding-y shrink scrollable-content medium-cell-block-container" style="background-color:hsla(0, 0%, 100%, 0.9);">
-		  	  <h2 class="title text-center">
-		  	    {{- if isset .Params "lab_number" -}}
-		  	      Lab #{{ .Params.lab_number }} on {{ .Params.lab_date }}: {{ end -}}
+            <div class="cell" style="height:calc(100vh - 5rem);">
+    		  	  <h2 class="title text-center">
+		    	    {{- if isset .Params "lab_number" -}}
+		    	      Lab #{{ .Params.lab_number }} on {{ .Params.lab_date }}: {{ end -}}
 		  	      {{ .Title }}</h2>
 		  	      {{- if isset .Params "report_due_date" }}
-    		  	    <h3 class="text-center">Lab report due {{dateFormat "Mon., Jan 2" .Params.report_due_date}}</h3>
+    		  	    <h3 class="text-center">Lab report due {{ dateFormat "Mon., Jan 2" .Params.report_due_date }}</h3>
               {{ end -}}
-		  	      {{- if isset .Params "presentation-date" }}
-    		  	    <h3 class="text-center">Presentation in lab on {{dateFormat "Mon., Jan 2" .Params.presentation_date}}</h3>
+		  	      {{- if isset .Params "presentation_date" }}
+    		  	    <h3 class="text-center">Presentation in lab on {{ dateFormat "Mon., Jan 2" .Params.presentation_date }}</h3>
               {{ end -}}
               {{ .Content }}
               {{- if (or .PrevInSection .NextInSection) }}
@@ -33,6 +34,7 @@
 	                {{ end -}}
       	        </div>
 	            {{ end -}}
+	          </div>
           </div>
 	      </div>
       </div>

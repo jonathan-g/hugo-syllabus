@@ -8,12 +8,12 @@
           <div class="cell auto show-for-medium">
           </div>
           <div class="grid-x grid-padding-x grid-padding-y shrink scrollable-content medium-cell-block-container" style="background-color:hsla(0, 0%, 100%, 0.9);">
-            <div class="cell">
-		  	  <h2 class="title text-center">
-		  	    {{- if isset .Params "assignment_number" -}}
-		  	    Homework #{{ .Params.assignment_number }}: {{ end -}}
-		  	    {{ .Title }}</h2>
-		  	  <h3 class="text-center">Due {{dateFormat "Mon., Jan 2" .Params.due_date}}</h3>
+            <div class="cell" style="height:calc(100vh - 5rem);">
+    		  	  <h2 class="title text-center">
+		    	    {{- if isset .Params "assignment_number" -}}
+		  	        Homework #{{ .Params.assignment_number }}: {{ end -}}
+		  	      {{ .Title }}</h2>
+		  	      <h3 class="text-center">Due {{dateFormat "Mon., Jan 2" .Params.due_date}}</h3>
 	            {{ .Content }}
               {{- if (or .PrevInSection .NextInSection) }}
               <div class="grid-x grid-padding-x align-top">
@@ -30,7 +30,7 @@
 	            </div>
 	            {{ end -}}
 	            </div>
-            </div>
+          </div>
 	      </div>
       </div>
 		</div>
