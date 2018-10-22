@@ -23,8 +23,8 @@
   -->
   <link rel="stylesheet" href="https://cdn.rawgit.com/gaborcsardi/r-font/master/rlogo.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.2/css/academicons.min.css">
-  {{ if .Site.FontAwesomePro -}}
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.4.1/css/all.css" {{ printf "integrity=%q" .Site.FontAwesomePro | safeHTMLAttr }} crossorigin="anonymous">
+  {{ if .Site.Params.fontAwesomePro -}}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.4.1/css/all.css" {{ printf "integrity=%q" .Site.Params.fontAwesomePro | safeHTMLAttr }} crossorigin="anonymous">
   {{- else -}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   {{- end }}
