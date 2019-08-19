@@ -19,3 +19,14 @@
   margin-left: -0.36em;
   margin-right: -0.15em;
 }
+
+.footer a:link,
+.footer a:visited {
+  color: yellow;
+}
+
+.footer a:hover,
+.footer a:active {
+  color: #adff2f;
+  text-decoration: underline dotted;
+}
