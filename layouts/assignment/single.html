@@ -11,7 +11,10 @@
             <div class="cell" style="height:calc(100vh - 5rem);">
     		  	  <h2 class="title text-center">
 		    	    {{- if isset .Params "assignment_number" -}}
-		  	        Homework #{{ .Params.assignment_number }}: {{ end -}}
+		  	           {{- default "Homework" .Params.assignment_type }} #{{ .Params.assignment_number }}: {{ else -}}
+	  	        {{- if isset .Params "assignment_type" -}}
+		  	           {{- .Params.assignment_type -}}: {{ end -}}
+		  	      {{- end -}}
 		  	      {{ .Title }}</h2>
 		  	      <h3 class="text-center">Due {{dateFormat "Mon., Jan 2" .Params.due_date}}</h3>
 	            {{ .Content }}
@@ -19,12 +22,12 @@
               <div class="grid-x grid-padding-x align-top">
                 <div class="cell small-6">
                   {{- if .NextInSection }}
-	                  <span class="text-left"><a href="{{.NextInSection.RelPermalink}}"><i class="material-icons">arrow_back</i> Prev: HW #{{.NextInSection.Params.assignment_number}} "{{.NextInSection.Title}}"</a></span>
+	                  <span class="text-left"><a href="{{.NextInSection.RelPermalink}}"><i class="material-icons">arrow_back</i> Prev: {{ default "HW" .NextInSection.Params.short_assignment_type }} {{- if isset .NextInSection.Params "assignment_number" }} #{{.NextInSection.Params.assignment_number}} {{- end }} "{{.NextInSection.Title}}"</a></span>
                   {{ end -}}
                   </div>
                 <div class="cell small-6">
                   {{- if .PrevInSection }}
-	                  <span class="text-right"><a href="{{.PrevInSection.RelPermalink}}">Next: HW #{{.PrevInSection.Params.assignment_number}} "{{.PrevInSection.Title}}" <i class="material-icons">arrow_forward</i></a></span>
+	                  <span class="text-right"><a href="{{.PrevInSection.RelPermalink}}">Next: {{ default "HW" .PrevInSection.Params.short_assignment_type }} {{- if isset .PrevInSection.Params "assignment_number" }} #{{.PrevInSection.Params.assignment_number}} {{- end }} "{{.PrevInSection.Title}}" <i class="material-icons">arrow_forward</i></a></span>
                   {{ end -}}
                 </div>
 	            </div>
