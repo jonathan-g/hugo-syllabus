@@ -19,12 +19,12 @@
               <div class="grid-x grid-padding-x align-top">
                 <div class="cell small-6">
                   {{- if .NextInSection }}
-	                  <span class="text-left"><a href="{{.NextInSection.URL}}"><i class="material-icons">arrow_back</i> Prev: HW #{{.NextInSection.Params.assignment_number}} "{{.NextInSection.Title}}"</a></span>
+	                  <span class="text-left"><a href="{{.NextInSection.RelPermalink}}"><i class="material-icons">arrow_back</i> Prev: HW #{{.NextInSection.Params.assignment_number}} "{{.NextInSection.Title}}"</a></span>
                   {{ end -}}
                   </div>
                 <div class="cell small-6">
                   {{- if .PrevInSection }}
-	                  <span class="text-right"><a href="{{.PrevInSection.URL}}">Next: HW #{{.PrevInSection.Params.assignment_number}} "{{.PrevInSection.Title}}" <i class="material-icons">arrow_forward</i></a></span>
+	                  <span class="text-right"><a href="{{.PrevInSection.RelPermalink}}">Next: HW #{{.PrevInSection.Params.assignment_number}} "{{.PrevInSection.Title}}" <i class="material-icons">arrow_forward</i></a></span>
                   {{ end -}}
                 </div>
 	            </div>

@@ -25,14 +25,14 @@
                   <div class="cell small-6">
                     <span class="text-left">
 	                  {{- if .PrevInSection }}
-                      <a href="{{.PrevInSection.URL}}"><i class="material-icons">arrow_back</i> Prev: Lab #{{.PrevInSection.Params.lab_number}} "{{.PrevInSection.Title}}"</a>
+                      <a href="{{.PrevInSection.RelPermalink}}"><i class="material-icons">arrow_back</i> Prev: Lab #{{.PrevInSection.Params.lab_number}} "{{.PrevInSection.Title}}"</a>
                     {{ end -}}
                     </span>
                   </div>
                   <div class="cell small-6">
                     <span class="text-right">
                     {{- if .NextInSection }}
-                      <a href="{{.NextInSection.URL}}">Next: Lab #{{.NextInSection.Params.lab_number}} "{{.NextInSection.Title}}" <i class="material-icons">arrow_forward</i></a>
+                      <a href="{{.NextInSection.RelPermalink}}">Next: Lab #{{.NextInSection.Params.lab_number}} "{{.NextInSection.Title}}" <i class="material-icons">arrow_forward</i></a>
 	                  {{ end -}}
                     </span>
                   </div>
