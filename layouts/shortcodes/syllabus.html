@@ -1,50 +1,63 @@
 {{ "<!-- theme default syllabus.html -->" | safeHTML }}
 {{ printf "<!-- fontAwesomePro = %s -->" .Site.Params.fontAwesomePro | safeHTML }}
+
 <table class="table">
   <tr>
     <th style="width:30%">Date</th>
     <th style="width:50%">Lesson</th>
+    {{- if (default true $.Site.Params.assignments.reading) }}
     <th style="width:5%">Reading</th>
+    {{- end }}
     <th style="width:5%">Slides</th>
+    {{- if (and (default true $.Site.Params.assignments.labs) (default true $.Site.Params.assignments.lab)) }}
     <th style="width:5%">Lab</th>
+    {{- end }}
+    {{- if (and (default true $.Site.Params.assignments.homework) (default true $.Site.Params.assignments.hw)) }}
     <th style="width:5%">Assignment</th>
+    {{- end }}
   </tr>
   {{ range $.Site.Data.lessons }}
     {{range . }}
     <tr>
       <td align="right">{{ dateFormat "Monday, Jan 2, 2006" .date }}</td>
       <td><b>{{ .title }}<b/></td>
-      {{ if .reading }}
-      <td align="center"><a href="{{ .reading }}">
-          <i class="fa fa-book fa-lg"></i></a></td>
-      {{ else }}
-        <td align="center"><font color="f1f1f1">
-          <i class="fa fa-book fa-lg"></i></font></td>
-      {{ end }}
+      {{- if (default true $.Site.Params.assignments.reading) }}
+        {{- if .reading }}
+        <td align="center"><a href="{{ .reading }}">
+            <i class="fa fa-book fa-lg"></i></a></td>
+        {{- else }}
+          <td align="center"><font color="f1f1f1">
+            <i class="fa fa-book fa-lg"></i></font></td>
+        {{- end }}
+      {{- end }}
 
-      {{ if .lecture }}
+      {{- if .lecture }}
       <td align="center"><a href="{{ .lecture  }}">
           <i class="fa {{ if $.Site.Params.fontAwesomePro -}} fa-presentation {{- else -}} fa-comment {{- end }} fa-lg"></i></a></td>
-      {{ else }}
+      {{- else }}
         <td align="center"><font color="f1f1f1">
           <i class="fa {{ if $.Site.Params.fontAwesomePro -}} fa-presentation {{- else -}} fa-comment {{- end }} fa-lg"></i></font></td>
-      {{ end }}
+      {{- end }}
 
-      {{ if .lab }}
-      <td align="center"><a href="{{ .Site.baseurl }}/labs/{{ .lab }}">
-          <i class="fa fa-flask fa-lg"></i></a></td>
-      {{ else }}
-        <td align="center"><font color="f1f1f1">
-          <i class="fa fa-flask fa-lg"></i></font></td>
-      {{ end }}
+    {{- if (and (default true $.Site.Params.assignments.labs) (default true $.Site.Params.assignments.lab)) }}
+        {{- if .lab }}
+        <td align="center"><a href="{{ .Site.baseurl }}/labs/{{ .lab }}">
+            <i class="fa fas fa-flask fa-lg"></i></a></td>
+        {{- else }}
+          <td align="center"><font color="f1f1f1">
+            <i class="fa fal fa-flask fa-lg"></i></font></td>
+        {{- end }}
+      {{- end }}
 
-      {{ if .assignment }}
-      <td align="center"><a href="{{ .Site.baseurl }}/assignment/{{ .assignment }}">
-          <i class="fa fa-keyboard-o fa-lg"></i></a></td>
-      {{ else }}
-        <td align="center"><font color="f1f1f1">
-          <i class="fa fa-keyboard-o fa-lg"></i></font></td>
-      {{ end }}
+    {{- if (and (default true $.Site.Params.assignments.homework) (default true $.Site.Params.assignments.hw)) }}
+        {{- if .assignment }}
+        <td align="center"><a href="{{ .Site.baseurl }}/assignment/{{ .assignment }}">
+            <i class="fa far fa-keyboard fa-lg"></i></a></td>
+        {{- else }}
+          <td align="center"><font color="f1f1f1">
+            <i class="fa fal fa-keyboard fa-lg"></i></font></td>
+        {{- end }}
+      {{- end }}
     </tr>
     {{ end }}
   {{ end }}
