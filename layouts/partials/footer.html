@@ -9,11 +9,33 @@
     <div class="grid-x">
       <div class="cell small-12">
         <div class="grid-x align-middle">
-          <div class="cell small-12 medium-shrink">
-            <img src="/img/cc-by.svg"/>
+          <div class="cell small-12 medium-shrink medium-text-left" style="font-size:75%;padding-right:0.25em;">
+            <p style="margin-bottom:0;">
+              Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
+            </p>
+            <p style="margin-bottom:0;">
+              and <a href="https://foundation.zurb.com/" target="_blank">Foundation</a>
+            </p>
           </div>
-          <div class="cell small-12 medium-shrink medium-text-left" style="font-size:75%;">
-            <p style="margin-bottom:0;">Copyright 2018, <a href="https://www.jonathangilligan.org" target="_blank">Jonathan Gilligan</a>.</p>
+          {{- if and (isset .Site.Params "ip") (isset .Site.Params.ip "licenseicon") }}
+          <div class="cell small-12 medium-shrink">
+            {{ if isset .Site.Params.ip "licenseurl" -}}
+            <a href="{{ .Site.Params.ip.licenseURL | safeURL }}" target="_blank">
+            {{- end -}}
+            <img src="{{ .Site.Params.ip.licenseIcon }}"/>
+            {{- if isset .Site.Params.ip "licenseurl" -}}
+            </a>
+            {{- end }}
+          </div>
+          {{- end }}
+          <div class="cell small-12 medium-shrink medium-text-left" style="font-size:75%;padding-left:0.2em;">
+            <p style="margin-bottom:0;">
+              {{- if and (isset .Site.Params "ip") (isset .Site.Params.ip "copyright") -}}
+              {{- .Site.Params.ip.copyright | safeHTML -}}
+              {{- else -}}
+              Site design
+              {{- end -}}
+            </p>
             <p style="margin-bottom:0;">Based on <a href="https://espm-157.carlboettiger.info/" target="_blank">ESPM 157</a>, by <a href="http://www.carlboettiger.info/" target="_blank">Carl Boettiger</a>.</p>
           </div>
           {{- if isset $.Site.Params "sitegithub" }}
