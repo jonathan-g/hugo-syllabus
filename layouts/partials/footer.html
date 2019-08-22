@@ -16,6 +16,11 @@
             <p style="margin-bottom:0;">Copyright 2018, <a href="https://www.jonathangilligan.org" target="_blank">Jonathan Gilligan</a>.</p>
             <p style="margin-bottom:0;">Based on <a href="https://espm-157.carlboettiger.info/" target="_blank">ESPM 157</a>, by <a href="http://www.carlboettiger.info/" target="_blank">Carl Boettiger</a>.</p>
           </div>
+          {{- if isset $.Site.Params "sitegithub" }}
+          <div style="font-size:200%;padding-left:0.3em;" class="cell small-12 medium-2 medium-text-left">
+            <a href="{{ .Site.Params.siteGitHub | safeURL }}" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+          {{ end -}}
         </div>
       </div>
     </div>
