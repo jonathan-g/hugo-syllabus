@@ -36,3 +36,18 @@
   background-color: hsla(0, 0%, 0%, 0.4);
   overflow: scroll-y;
 }
+
+table thead th[align="center"],
+table tfoot th[align="center"] {
+  text-align: center;
+}
+
+table thead th[align="left"],
+table tfoot th[align="left"] {
+  text-align: left;
+}
+
+table thead th[align="right"],
+table tfoot th[align="right"] {
+  text-align: right;
+}
