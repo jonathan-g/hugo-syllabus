@@ -51,3 +51,11 @@ table thead th[align="right"],
 table tfoot th[align="right"] {
   text-align: right;
 }
+
+table tbody tr:nth-child(even) td i.idle-icon {
+  color: #d8d8f0;
+}
+
+table tbody tr:nth-child(odd) td i.idle-icon {
+  color: #e8e8f8;
+}

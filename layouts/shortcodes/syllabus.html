@@ -26,8 +26,8 @@
         <td align="center"><a href="{{ .reading }}">
             <i class="{{ if $.Site.Params.fontAwesomePro -}} fas {{- else -}} fas {{- end }} fa-book fa-lg"></i></a></td>
         {{- else }}
-          <td align="center"><font color="f1f1f1">
-            <i class="{{ if $.Site.Params.fontAwesomePro -}} fas {{- else -}} fas {{- end }} fa-book fa-lg"></i></font></td>
+          <td align="center">
+            <i class="idle-icon {{ if $.Site.Params.fontAwesomePro -}} far {{- else -}} fas {{- end }} fa-book fa-lg"></i></td>
         {{- end }}
       {{- end }}
 
@@ -35,8 +35,8 @@
       <td align="center"><a href="{{ .lecture  }}">
           <i class="{{ if $.Site.Params.fontAwesomePro -}} far fa-presentation {{- else -}} far fa-comment {{- end }} fa-lg"></i></a></td>
       {{- else }}
-        <td align="center"><font color="f1f1f1">
-          <i class="{{ if $.Site.Params.fontAwesomePro -}} far fa-presentation {{- else -}} far fa-comment {{- end }} fa-lg"></i></font></td>
+        <td align="center">
+          <i class="idle-icon {{ if $.Site.Params.fontAwesomePro -}} fal fa-presentation {{- else -}} far fa-comment {{- end }} fa-lg"></i></td>
       {{- end }}
 
     {{- if (and (default true $.Site.Params.assignments.labs) (default true $.Site.Params.assignments.lab)) }}
@@ -44,8 +44,8 @@
         <td align="center"><a href="{{ .Site.baseurl }}/labs/{{ .lab }}">
             <i class="fas fa-flask fa-lg"></i></a></td>
         {{- else }}
-          <td align="center"><font color="f1f1f1">
-            <i class="{{ if $.Site.Params.fontAwesomePro -}} fal {{- else -}} fas {{- end }} fa-flask fa-lg"></i></font></td>
+          <td align="center">
+            <i class="idle-icon {{ if $.Site.Params.fontAwesomePro -}} fal {{- else -}} fas {{- end }} fa-flask fa-lg"></i></td>
         {{- end }}
       {{- end }}
 
@@ -54,8 +54,8 @@
         <td align="center"><a href="{{ .Site.baseurl }}/assignment/{{ .assignment }}">
             <i class="{{ if $.Site.Params.fontAwesomePro -}} far {{- else -}} far {{- end }} fa-keyboard fa-lg"></i></a></td>
         {{- else }}
-          <td align="center"><font color="f1f1f1">
-            <i class="{{ if $.Site.Params.fontAwesomePro -}} far {{- else -}} far {{- end }} fa-keyboard fa-lg"></i></font></td>
+          <td align="center">
+            <i class="idle-icon {{ if $.Site.Params.fontAwesomePro -}} fal {{- else -}} far {{- end }} fa-keyboard fa-lg"></i></td>
         {{- end }}
       {{- end }}
     </tr>
