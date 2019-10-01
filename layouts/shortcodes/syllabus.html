@@ -24,38 +24,38 @@
       {{- if (default true $.Site.Params.assignments.reading) }}
         {{- if .reading }}
         <td align="center"><a href="{{ .reading }}">
-            <i class="fa fa-book fa-lg"></i></a></td>
+            <i class="{{ if $.Site.Params.fontAwesomePro -}} fas {{- else -}} fas {{- end }} fa-book fa-lg"></i></a></td>
         {{- else }}
           <td align="center"><font color="f1f1f1">
-            <i class="fa fa-book fa-lg"></i></font></td>
+            <i class="{{ if $.Site.Params.fontAwesomePro -}} fas {{- else -}} fas {{- end }} fa-book fa-lg"></i></font></td>
         {{- end }}
       {{- end }}
 
       {{- if .lecture }}
       <td align="center"><a href="{{ .lecture  }}">
-          <i class="fa {{ if $.Site.Params.fontAwesomePro -}} fa-presentation {{- else -}} fa-comment {{- end }} fa-lg"></i></a></td>
+          <i class="{{ if $.Site.Params.fontAwesomePro -}} far fa-presentation {{- else -}} far fa-comment {{- end }} fa-lg"></i></a></td>
       {{- else }}
         <td align="center"><font color="f1f1f1">
-          <i class="fa {{ if $.Site.Params.fontAwesomePro -}} fa-presentation {{- else -}} fa-comment {{- end }} fa-lg"></i></font></td>
+          <i class="{{ if $.Site.Params.fontAwesomePro -}} far fa-presentation {{- else -}} far fa-comment {{- end }} fa-lg"></i></font></td>
       {{- end }}
 
     {{- if (and (default true $.Site.Params.assignments.labs) (default true $.Site.Params.assignments.lab)) }}
         {{- if .lab }}
         <td align="center"><a href="{{ .Site.baseurl }}/labs/{{ .lab }}">
-            <i class="fa fas fa-flask fa-lg"></i></a></td>
+            <i class="fas fa-flask fa-lg"></i></a></td>
         {{- else }}
           <td align="center"><font color="f1f1f1">
-            <i class="fa fal fa-flask fa-lg"></i></font></td>
+            <i class="{{ if $.Site.Params.fontAwesomePro -}} fal {{- else -}} fas {{- end }} fa-flask fa-lg"></i></font></td>
         {{- end }}
       {{- end }}
 
     {{- if (and (default true $.Site.Params.assignments.homework) (default true $.Site.Params.assignments.hw)) }}
         {{- if .assignment }}
         <td align="center"><a href="{{ .Site.baseurl }}/assignment/{{ .assignment }}">
-            <i class="fa far fa-keyboard fa-lg"></i></a></td>
+            <i class="{{ if $.Site.Params.fontAwesomePro -}} far {{- else -}} far {{- end }} fa-keyboard fa-lg"></i></a></td>
         {{- else }}
           <td align="center"><font color="f1f1f1">
-            <i class="fa fal fa-keyboard fa-lg"></i></font></td>
+            <i class="{{ if $.Site.Params.fontAwesomePro -}} far {{- else -}} far {{- end }} fa-keyboard fa-lg"></i></font></td>
         {{- end }}
       {{- end }}
     </tr>
