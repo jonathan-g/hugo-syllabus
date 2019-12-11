@@ -1,14 +1,14 @@
 <div class="grid-x align-middle">
-  <div class="cell small-12 medium-4">
+  <div class="cell small-12 medium-4 large-4">
     <p style="margin-bottom:0;font-size:76%;color:#808080;">
       {{ with .Site.Params.backgroundCredit }}
       Image Credit: {{ . | markdownify -}}
       {{ end }}<!-- Left material --></p>
   </div>
-  <div class="cell small-12 medium-6 large-4 medium-offset-2 large-offset-4">
-    <div class="grid-x">
-      <div class="cell small-12">
-        <div class="grid-x align-middle">
+  <div class="cell show-for-medium medium-auto">
+  </div>
+  <div class="cell small-12 medium-shrink large-6">
+    <div class="grid-x align-center align-middle">
           <div class="cell small-12 medium-shrink medium-text-left" style="font-size:75%;padding-right:0.25em;">
             <p style="margin-bottom:0;">
               Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>
@@ -39,11 +39,10 @@
             <p style="margin-bottom:0;">Based on <a href="https://espm-157.carlboettiger.info/" target="_blank">ESPM 157</a>, by <a href="http://www.carlboettiger.info/" target="_blank">Carl Boettiger</a>.</p>
           </div>
           {{- if isset $.Site.Params "sitegithub" }}
-          <div style="font-size:200%;padding-left:0.3em;" class="cell small-12 medium-2 medium-text-left">
+          <div style="font-size:200%;padding-left:0.3em;padding-right:0.5em" class="cell small-12 medium-shrink medium-text-left">
             <a href="{{ .Site.Params.siteGitHub | safeURL }}" target="_blank"><i class="fab fa-github"></i></a>
           </div>
           {{ end -}}
-        </div>
       </div>
     </div>
   </div>

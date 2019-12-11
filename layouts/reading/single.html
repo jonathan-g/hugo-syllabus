@@ -8,7 +8,7 @@
           <div class="cell auto show-for-medium">
           </div>
           <div class="grid-x grid-padding-x grid-padding-y shrink scrollable-content medium-cell-block-container" style="background-color:hsla(0, 0%, 100%, 0.9);">
-            <div class="cell" style="height:calc(100vh - 5rem);">
+            <div class="cell main-cell">
     		  	  <h2 class="title text-center">{{ .Title }}</h2>
     		  	  <h3 class="text-center">Class #{{ .Params.class_number }} ({{dateFormat "Mon., Jan 2" .Params.class_date}})</h3>
 	            {{ .Content }}
@@ -31,7 +31,7 @@
 	      </div>
       </div>
     </div>
-    <div class="cell footer shrink" style="text-align:center;color:white;background-color:hsla(0, 0%, 0%, 0.4);">
+    <div class="cell footer shrink">
       {{ partial "footer.html" . }}
     </div>
 	</div>
