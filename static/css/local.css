@@ -49,11 +49,16 @@ div.footer {
   text-decoration: underline dotted;
 }
 
+.main-content-cell {
+  background-color: #ffffff;
+  background-color: hsla(0, 0%, 100%, 0.9);
+}
+
 .title-page-box {
   color: white;
   background-color: rgb(0,0,0);
   background-color: hsla(0, 0%, 0%, 0.4);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 @media print, screen and (min-width: 40em) {
