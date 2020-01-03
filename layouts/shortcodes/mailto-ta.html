@@ -1,14 +1,14 @@
-{{- $to := "" -}}
+{{- $to := .Site.Params.ta.email -}}
 {{- $subj := "" -}}
 {{- if .IsNamedParams -}}
-  {{- $to = .Get "to" -}}
   {{- $subj = .Get "subj" -}}
 {{- else -}}
-  {{- $to := .Get 0 -}}
-  {{- if len .Params | gt 1 -}}
-    {{- $subj = .Get 1 -}}
-  {{- end -}}
+    {{- $subj = .Get 0 -}}
 {{- end -}}
+{{- $body := $to -}}
+{{- if .Inner -}}{{- $body = .Inner -}}{{- end -}}
 <a href="mailto:{{- $to -}}
   {{- if $subj }}?subject={{ $subj }}{{ end -}}
-">{{ $to }}</a>
+">
+{{- $body -}}
+</a>

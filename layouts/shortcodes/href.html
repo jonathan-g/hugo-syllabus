@@ -1,0 +1,24 @@
+{{- $href := "" -}}
+{{- $target := "" -}}
+{{- $title := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $href = .Get "href" -}}
+  {{- $target = .Get "target" -}}
+  {{- $title = .Get "title" -}}
+{{- else -}}
+  {{- $href := .Get 0 -}}
+  {{- if len .Params | gt 1 -}}
+    {{- $target = .Get 1 -}}
+    {{- if len .Params | gt 2 -}}
+      {{- $title = .Get 2 -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $body := $href -}}
+{{- if .Inner -}}{{- $body = .Inner -}}{{- end -}}
+<a href="{{ $href }}"
+  {{- if $target }} target="{{ $target }}"{{ end }}
+  {{- if $title }} title="{{ $title }}"{{ end -}}
+>
+{{- $body -}}
+</a>

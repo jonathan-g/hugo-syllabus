@@ -1,0 +1,19 @@
+{{- $to := delimit (slice .Site.Params.prof.email .Site.Params.ta.email) ", " -}}
+{{- $subj := "" -}}
+{{- if .IsNamedParams -}}
+  {{- if isset .Params "subj" -}}
+    {{- $subj = .Get "subj" -}}
+  {{- end -}}
+{{- else -}}
+  {{- if len .Params | gt 0 }}
+    {{- $subj = .Get 0 -}}
+  {{- end -}}
+{{- end -}}
+{{- $body := $to -}}
+{{- $tourl := replace $to ", " "%2C%20" -}}
+{{- if .Inner -}}{{- $body = .Inner -}}{{- end -}}
+<a href="mailto:{{- $tourl -}}
+  {{- if $subj }}?subject={{ $subj }}{{ end -}}
+">
+{{- $body -}}
+</a>

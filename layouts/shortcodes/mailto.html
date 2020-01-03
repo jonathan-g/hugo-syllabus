@@ -9,6 +9,9 @@
     {{- $subj = .Get 1 -}}
   {{- end -}}
 {{- end -}}
-<a href="mailto:{{- $to -}}
+{{- $body := $to -}}
+{{- if .Inner -}}{{- $body = .Inner -}}{{- end -}}
+{{- $tourl := replace  $to "," "%2C%20" -}}
+<a href="mailto:{{- $tourl -}}
   {{- if $subj }}?subject={{ $subj }}{{ end -}}
-">{{ $to }}</a>
+">{{ $body }}</a>
