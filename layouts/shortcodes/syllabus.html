@@ -23,7 +23,7 @@
         <td><b>{{ .title }}<b/></td>
         {{- if (default true $.Site.Params.assignments.reading) }}
           {{- if .reading }}
-            <td align="center"><a href="{{ .reading }}">
+            <td align="center"><a href="{{ .reading }}" title="Reading for class #{{ .class_num }}: {{ replace .title "\"" "'" }}">
             <i class="{{ if $.Site.Params.fontAwesomePro -}} fas {{- else -}} fas {{- end }} fa-book fa-lg"></i></a></td>
           {{- else }}
             <td align="center">
@@ -32,7 +32,7 @@
         {{- end }}
 
         {{- if .lecture }}
-          <td align="center"><a href="{{ .lecture  }}">
+          <td align="center"><a href="{{ .lecture  }}" title="Slides for class #{{.class_num}}: {{ replace .title "\"" "'" }}">
           <i class="{{ if $.Site.Params.fontAwesomePro -}} far fa-presentation {{- else -}} far fa-comment {{- end }} fa-lg"></i></a></td>
         {{- else }}
           <td align="center">
@@ -41,7 +41,9 @@
 
         {{- if (and (default true $.Site.Params.assignments.labs) (default true $.Site.Params.assignments.lab)) }}
           {{- if .lab }}
-            <td align="center"><a href="{{ .Site.baseurl }}/labs/{{ .lab }}">
+            <td align="center"><a href="{{ .Site.baseurl }}/labs/{{ .lab }}"
+              {{- if .lab_title }} title="Lab #{{ .lab_num }}: {{ replace .lab_title "\"" "'" }}"
+              {{- end }}>
             <i class="fas fa-flask fa-lg"></i></a></td>
           {{- else }}
             <td align="center">
@@ -51,7 +53,9 @@
 
         {{- if (and (default true $.Site.Params.assignments.homework) (default true $.Site.Params.assignments.hw)) }}
           {{- if .assignment }}
-            <td align="center"><a href="{{ .Site.baseurl }}/assignment/{{ .assignment }}">
+            <td align="center"><a href="{{ .Site.baseurl }}/assignment/{{ .assignment }}"
+              {{- if .lab_title }} title="Lab #{{ .lab_num }}: {{ replace .lab_title "\"" "'" }}"
+              {{- end }}>
             <i class="{{ if $.Site.Params.fontAwesomePro -}} far {{- else -}} far {{- end }} fa-keyboard fa-lg"></i></a></td>
           {{- else }}
             <td align="center">

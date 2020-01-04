@@ -13,7 +13,7 @@
 		    	    {{- if isset .Params "lab_number" -}}
 		    	      Lab #{{ .Params.lab_number }} {{ .Params.title }}{{ end -}}
 		    	    {{- if isset .Params "pdf_url" }}
-		    	        <h4><a href="{{ .Params.pdf_url }}" target="_blank">PDF version</a> <a href="{{ .Params.pdf_url }}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></h4>
+		    	        <h4><a href="{{ .Params.pdf_url }}" target="_blank">PDF version</a> <a href="{{ .Params.pdf_url }}" target="_blank"><i class="far fa-file-pdf"></i></a></h4>
 		    	    {{ end -}}
     	        {{ .Title }}</h2>
               {{ .Content }}

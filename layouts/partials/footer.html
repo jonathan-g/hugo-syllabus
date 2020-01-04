@@ -20,7 +20,9 @@
           {{- if and (isset .Site.Params "ip") (isset .Site.Params.ip "licenseicon") }}
           <div class="cell small-12 medium-shrink">
             {{ if isset .Site.Params.ip "licenseurl" -}}
-            <a href="{{ .Site.Params.ip.licenseURL | safeURL }}" target="_blank">
+            <a href="{{ .Site.Params.ip.licenseURL | safeURL }}"
+              {{- if isset .Site.Params.ip "licensetitle" }} title="{{ .Site.Params.ip.licenseTitle }}"
+              {{- end }} target="_blank">
             {{- end -}}
             <img src="{{ .Site.Params.ip.licenseIcon }}"/>
             {{- if isset .Site.Params.ip "licenseurl" -}}
@@ -40,7 +42,7 @@
           </div>
           {{- if isset $.Site.Params "sitegithub" }}
           <div style="font-size:200%;padding-left:0.3em;padding-right:0.5em" class="cell small-12 medium-shrink medium-text-left">
-            <a href="{{ .Site.Params.siteGitHub | safeURL }}" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="{{ .Site.Params.siteGitHub | safeURL }}" title="Web site source code on GitHub" target="_blank"><i class="fab fa-github"></i></a>
           </div>
           {{ end -}}
       </div>
