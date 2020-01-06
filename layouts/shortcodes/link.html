@@ -1,0 +1,20 @@
+{{- $href := "" -}}
+{{- $title := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $href = .Get "href" -}}
+  {{- $title = .Get "title" -}}
+{{- else -}}
+  {{- $href := .Get 0 -}}
+  {{- if len .Params | gt 1 -}}
+    {{- $title = .Get 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- $body := ""  -}}
+{{- if .Inner -}}{{- $body = .Inner -}}{{- end -}}
+<a href="{{- $href -}}"
+  {{- if $title }} title="{{ $title }}"
+  {{- end }} target="_blank">
+{{- if $body -}}
+  {{ $body | markdownify }}
+{{- end -}}
+</a>
