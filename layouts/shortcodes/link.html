@@ -9,7 +9,7 @@
     {{- $title = .Get 1 -}}
   {{- end -}}
 {{- end -}}
-{{- $body := ""  -}}
+{{- $body := "" -}}
 {{- if .Inner -}}{{- $body = .Inner -}}{{- end -}}
 <a href="{{- $href -}}"
   {{- if $title }} title="{{ $title }}"
