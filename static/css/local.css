@@ -1,91 +1,104 @@
-.tex-logo sub, .latex-logo sub, .latex-logo sup {
-  text-transform: uppercase;
+.tex-logo sub,
+.latex-logo sub,
+.latex-logo sup {
+    text-transform: uppercase;
 }
 
-.tex-logo, .latex-logo {
-  font-size: 1em;
+.tex-logo,
+.latex-logo {
+    font-size: 1em;
 }
 
-.tex-logo sub, .latex-logo sub {
-  font-size: 0.90em;
-  vertical-align: -0.0;
-  margin-left: -0.25em;
-  margin-right: -0.1em;
+.tex-logo sub,
+.latex-logo sub {
+    font-size: 0.90em;
+    vertical-align: -0.0;
+    margin-left: -0.25em;
+    margin-right: -0.1em;
 }
 
 .latex-logo sup {
-  font-size: 0.85em;
-  vertical-align: -0.3em;
-  margin-left: -0.36em;
-  margin-right: -0.15em;
+    font-size: 0.85em;
+    vertical-align: -0.3em;
+    margin-left: -0.36em;
+    margin-right: -0.15em;
 }
 
 div.footer {
-  text-align:center;
-  color:white;
-  background-color: rgb(0,0,0);
-  background-color:
-    hsla(0, 0%, 0%, 0.4);
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    background-color: hsla(0, 0%, 0%, 0.4);
 }
 
 div.footer {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
-@media print, screen and (min-width: 40em) {
-  div.footer {
-    margin-top: 0;
-  }
+@media print,
+screen and (min-width: 40em) {
+    div.footer {
+        margin-top: 0;
+    }
 }
 
 .footer a:link,
 .footer a:visited {
-  color: yellow;
+    color: yellow;
 }
 
 .footer a:hover,
 .footer a:active {
-  color: #adff2f;
-  text-decoration: underline dotted;
+    color: #adff2f;
+    text-decoration: underline dotted;
 }
 
 .main-content-cell {
-  background-color: #ffffff;
-  background-color: hsla(0, 0%, 100%, 0.9);
+    background-color: #ffffff;
+    background-color: hsla(0, 0%, 100%, 0.9);
 }
 
 .title-page-box {
-  color: white;
-  background-color: rgb(0,0,0);
-  background-color: hsla(0, 0%, 0%, 0.4);
-  overflow-y: auto;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    background-color: hsla(0, 0%, 0%, 0.4);
+    overflow-y: auto;
 }
 
-@media print, screen and (min-width: 40em) {
-  .main-cell {
-    height: calc(100vh - 6rem);
-  }
+@media print,
+screen and (min-width: 40em) {
+    .main-cell {
+        height: calc(100vh - 6rem);
+    }
 }
 
 table thead th[align="center"],
 table tfoot th[align="center"] {
-  text-align: center;
+    text-align: center;
 }
 
 table thead th[align="left"],
 table tfoot th[align="left"] {
-  text-align: left;
+    text-align: left;
 }
 
 table thead th[align="right"],
 table tfoot th[align="right"] {
-  text-align: right;
+    text-align: right;
 }
 
 table tbody tr:nth-child(even) td i.idle-icon {
-  color: #d8d8f0;
+    color: #d8d8f0;
 }
 
 table tbody tr:nth-child(odd) td i.idle-icon {
-  color: #e8e8f8;
+    color: #e8e8f8;
+}
+
+pre {
+  line-height: 1.0;
+}
+pre>code {
+    line-height: 1.0;
+    border: none;
 }
