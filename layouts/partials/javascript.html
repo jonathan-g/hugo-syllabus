@@ -19,30 +19,37 @@ var MathJax = {
     processEscapes: true
     },
   TeX: {
-    extensions: ["color.js", "mhchem.js", "TeX/amsmath.js"],
+    extensions: [ {{ range .Site.Params.mathjax.extensions -}}
+      {{ . }}, {{ end -}}
+      ]
+    {{- if isset .Site.Params.mathjax "macros" }},
     Macros: {
-      permil: "\\unicode{x2030}",
-      pH: "p\\ce{H}",
-      CaSi: "\\ce{CaSiO3}",
-      silicate: "\\ce{SiO3^2-}",
-      Caplus: "\\ce{Ca^2+}",
-      calcite: "\\ce{CaCO3}",
-      silica: "\\ce{SiO2}",
-      OH: "\\ce{OH-}",
-      Hplus: "\\ce{H+}",
-      carbonic: "\\ce{H2CO3}",
-      bicarb: "\\ce{HCO3-}",
-      carb: "\\ce{CO3^2-}",
-      water: "\\mathrm{H_2O}",
-      degF: "^\\circ \\mathrm{F}",
-      degC: "^\\circ \\mathrm{C}",
-      methane: "\\ce{CH4}",
-      COO: "\\ce{CO2}"
-      }
+      {{- range $macro_key, $macro_body := .Site.Params.mathjax.macros }}
+      {{ $macro_key }}: {{ $macro_body }},
+      {{- end }}
     }
+    {{- end }}
+    },
+    "HTML-CSS" : {scale: {{ default 100 .Site.Params.mathjax.scale | safeJS }} }
 };
 </script>
 <script type="text/x-mathjax-config">
+{{- if .Site.Params.mathjax.sansserif }}
+MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+    var VARIANT = MathJax.OutputJax["HTML-CSS"].FONTDATA.VARIANT;
+    VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+	  VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+	  VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+	  VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+	});
+MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+    var VARIANT = MathJax.OutputJax["SVG"].FONTDATA.VARIANT;
+    VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+	  VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+	  VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+	  VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+	});
+{{- end }}
 </script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
 {{ end }}
