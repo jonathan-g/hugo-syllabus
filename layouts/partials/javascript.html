@@ -9,12 +9,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/4.1.6/what-input.min.js" type="text/javascript"></script>
 <script src="/js/foundation/foundation.min.js" type="text/javascript"></script>
 <script src="/js/app.js"  type="text/javascript"></script>
-
 <!-- LaTeX math rendering -->
 {{ if or .Params.math .Site.Params.math }}
+<script>
+var MathJax = {
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(', '\\)']],
+    processEscapes: true
+    },
+  TeX: {
+    extensions: ["color.js", "mhchem.js", "TeX/amsmath.js"],
+    Macros: {
+      permil: "\\unicode{x2030}",
+      pH: "p\\ce{H}",
+      CaSi: "\\ce{CaSiO3}",
+      silicate: "\\ce{SiO3^2-}",
+      Caplus: "\\ce{Ca^2+}",
+      calcite: "\\ce{CaCO3}",
+      silica: "\\ce{SiO2}",
+      OH: "\\ce{OH-}",
+      Hplus: "\\ce{H+}",
+      carbonic: "\\ce{H2CO3}",
+      bicarb: "\\ce{HCO3-}",
+      carb: "\\ce{CO3^2-}",
+      water: "\\mathrm{H_2O}",
+      degF: "^\\circ \\mathrm{F}",
+      degC: "^\\circ \\mathrm{C}",
+      methane: "\\ce{CH4}",
+      COO: "\\ce{CO2}"
+      }
+    }
+};
+</script>
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']],
-                                    processEscapes: true }, });
 </script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
 {{ end }}
