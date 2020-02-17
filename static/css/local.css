@@ -96,9 +96,12 @@ table tbody tr:nth-child(odd) td i.idle-icon {
 }
 
 pre {
-  line-height: 1.0;
+  background-color: #e6e6e6;
+  line-height: inherit;
+  margin-bottom: 16px;
 }
 pre>code {
-    line-height: 1.0;
+    line-height: inherit;
     border: none;
+    padding-left: 0;
 }
