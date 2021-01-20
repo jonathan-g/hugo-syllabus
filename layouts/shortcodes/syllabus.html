@@ -19,7 +19,11 @@
   {{ range $.Site.Data.lessons }}
     {{range . }}
       <tr>
-        <td align="right">{{ dateFormat "Monday, Jan 2, 2006" .date }}</td>
+         <td align="right">
+          {{- if .date -}}
+          {{ dateFormat "Monday, Jan 2, 2006" .date }}
+          {{- end -}}
+          </td>
         <td><b>{{ .title }}<b/></td>
         {{- if (default true $.Site.Params.assignments.reading) }}
           {{- if .reading }}
