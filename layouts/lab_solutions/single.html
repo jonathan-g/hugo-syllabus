@@ -10,14 +10,12 @@
           <div class="grid-x grid-padding-x grid-padding-y shrink scrollable-content medium-cell-block-container main-content-cell">
             <div class="cell main-cell">
     		  	  <h2 class="title text-center">
-		    	    <!-- {{- if isset .Params "lab_number" -}}
+		    	    {{- if isset .Params "lab_number" -}}
 		    	      Lab #{{ .Params.lab_number }} {{ .Params.title }}{{ end -}}
-		    	      -->
-    	        {{- .Title -}}
-    	        </h2>
 		    	    {{- if isset .Params "pdf_url" }}
 		    	        <h4><a href="{{ .Params.pdf_url }}" target="_blank">PDF version</a> <a href="{{ .Params.pdf_url }}" target="_blank"><i class="far fa-file-pdf"></i></a></h4>
 		    	    {{ end -}}
+    	        {{ .Title }}</h2>
               {{ .Content }}
             </div>
           </div>
