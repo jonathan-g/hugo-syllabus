@@ -9,6 +9,11 @@
           </div>
           <div class="grid-x grid-padding-x grid-padding-y shrink scrollable-content medium-cell-block-container main-content-cell">
             <div class="cell main-cell">
+    		  	  <h2 class="title text-center">
+		  	      {{ .Title }}</h2>
+		    	    {{- if isset .Params "pdf_url" }}
+		    	        <h4><a href="{{ .Params.pdf_url }}" target="_blank">PDF version</a> <a href="{{ .Params.pdf_url }}" target="_blank"><i class="far fa-file-pdf"></i></a></h4>
+		    	    {{ end -}}
             {{ .Content }}
             </div>
           </div>
