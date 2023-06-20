@@ -25,7 +25,7 @@ var MathJax = {
     {{- if isset .Site.Params.mathjax "macros" }},
     Macros: {
       {{- range $macro := .Site.Params.mathjax.macros }}
-      {{ $macro.key }}: {{ $macro.body }},
+        {{ $macro.key }}: {{ $macro.body }},
       {{- end }}
     }
     {{- end }}
