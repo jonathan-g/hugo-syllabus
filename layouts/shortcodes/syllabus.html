@@ -45,7 +45,7 @@
 
         {{- if (and (default true $.Site.Params.assignments.labs) (default true $.Site.Params.assignments.lab)) }}
           {{- if .lab }}
-            <td align="center"><a href="{{ .Site.baseurl }}/labs/{{ .lab }}"
+            <td align="center"><a href="{{ .lab }}"
               {{- if .lab_title }} title="Lab #{{ .lab_num }}: {{ replace .lab_title "\"" "'" }}"
               {{- end }}>
             <i class="fas fa-flask fa-lg"></i></a></td>
@@ -57,8 +57,8 @@
 
         {{- if (and (default true $.Site.Params.assignments.homework) (default true $.Site.Params.assignments.hw)) }}
           {{- if .assignment }}
-            <td align="center"><a href="{{ .Site.baseurl }}/assignment/{{ .assignment }}"
-              {{- if .lab_title }} title="Lab #{{ .lab_num }}: {{ replace .lab_title "\"" "'" }}"
+            <td align="center"><a href="{{ .assignment }}"
+              {{- if .hw_title }} title="HW #{{ .hw_num }}: {{ replace .hw_title "\"" "'" }}"
               {{- end }}>
             <i class="{{ if $.Site.Params.fontAwesomePro -}} far {{- else -}} far {{- end }} fa-keyboard fa-lg"></i></a></td>
           {{- else }}
